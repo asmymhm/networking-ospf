@@ -114,7 +114,7 @@ Test end-to-end ping between LANs: PC1 → PC2.
 
 ## Router Configuration
 
-R1 router-configs/R1.txt
+R1 router-configs/R1.cfg
 
 ```text
 hostname R1
@@ -131,7 +131,7 @@ router ospf 1
  network 10.0.12.0 0.0.0.255 area 0
  ```
 
- R2 router-configs/R2.txt
+ R2 router-configs/R2.cfg
 
  ```text
  hostname R2
@@ -148,7 +148,7 @@ router ospf 1
  network 10.0.23.0 0.0.0.255 area 0
 ```
 
-R3 router-configs/R3.txt
+R3 router-configs/R3.cfg
 
 ```text
 hostname R3
@@ -169,13 +169,13 @@ router ospf 1
 
 ## PC Configuration
 
-PC1 pc-configs/PC1.txt
+PC1 pc-configs/PC1.cfg
 
 IP Address: 192.168.1.10
 Subnet Mask: 255.255.255.0
 Default Gateway: 192.168.1.1
 
-PC2 pc-configs/PC2.txt
+PC2 pc-configs/PC2.cfg
 
 IP Address: 192.168.3.10
 Subnet Mask: 255.255.255.0
