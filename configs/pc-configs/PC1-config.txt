@@ -1,0 +1,9 @@
+PC1 Configuration
+-----------------
+IP Address : 192.168.1.2
+Subnet Mask: 255.255.255.0
+Default GW : 192.168.1.1
+
+Verification:
+- ping 192.168.1.1   (check gateway)
+- ping 192.168.3.2   (check PC2 connectivity via OSPF)

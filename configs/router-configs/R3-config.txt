@@ -1,0 +1,30 @@
+Router>
+Router>enable
+Router#configure terminal
+Router(config)#hostname R3
+
+
+! Configure R2-R3 link
+R3(config)#interface g0/0
+R3(config-if)#ip address 10.0.23.3 255.255.255.0
+R3(config-if)#no shutdown
+
+! Configure LAN interface for PC2
+R3(config)#interface g0/1
+R3(config-if)#ip address 192.168.3.1 255.255.255.0
+R3(config-if)#no shutdown
+
+! Enable OSPF Process 1
+R3(config)#router ospf 1
+R3(config)#router-id 3.3.3.3
+R3(config)#log-adjacency-changes
+R3(config-router)#network 10.0.23.0 0.0.0.255 area 0
+R3(config-router)#network 192.168.3.0 0.0.0.255 area 0
+
+R3(config-router)#end
+%SYS-5-CONFIG_I: Configured from console by console
+
+R3#write
+Building configuration...
+[OK]
+R3#

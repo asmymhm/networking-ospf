@@ -1,0 +1,30 @@
+Router>
+Router>enable
+Router#configure terminal
+Router(config)#hostname R1
+
+
+! Configure LAN interface for PC1
+R1(config)#interface g0/0
+R1(config-if)#ip address 192.168.1.1 255.255.255.0
+R1(config-if)#no shutdown
+
+! Configure R1-R2 link
+R1(config)#interface g0/1
+R1(config-if)#ip address 10.0.12.1 255.255.255.0
+R1(config-if)#no shutdown
+
+! Enable OSPF Process 1
+R1(config)#router ospf 1
+R1(config)#router-id 1.1.1.1
+R1(config)#log-adjacency-changes
+R1(config-router)#network 192.168.1.0 0.0.0.255 area 0
+R1(config-router)#network 10.0.12.0 0.0.0.255 area 0
+
+R1(config-router)#end
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#write
+Building configuration...
+[OK]
+R1#
